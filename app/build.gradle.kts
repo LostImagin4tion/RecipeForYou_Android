@@ -7,7 +7,7 @@ plugins {
 val composeVersion = "1.2.1"
 
 android {
-    compileSdk = 32
+    compileSdk = 33
     buildToolsVersion = "30.0.3"
 
     namespace = "io.lostimagin4tion.recipeforyou"
@@ -77,7 +77,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = composeVersion
+        kotlinCompilerExtensionVersion = "1.3.1"
     }
 
     lint {
@@ -89,13 +89,13 @@ dependencies {
     // Enforce correct kotlin version for all dependencies
     implementation(enforcedPlatform(kotlin("bom")))
 
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.2.2")
 
     implementation(kotlin("reflect"))
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.6.0")
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.5.1")
+    implementation("com.google.android.material:material:1.6.1")
 
     // ============================================================================================
     // CAREFUL WHEN UPDATING COMPOSE RELATED DEPENDENCIES - THEY CAN USE DIFFERENT COMPOSE VERSION!
@@ -104,6 +104,8 @@ dependencies {
     // Main Compose dependencies
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.foundation:foundation:$composeVersion")
+    implementation("androidx.compose.runtime:runtime:$composeVersion")
     // Material You
     implementation("androidx.compose.material3:material3:1.0.0-beta02")
     implementation("androidx.compose.ui:ui-tooling:$composeVersion")
